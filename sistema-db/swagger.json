@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Sistema de Supermercado",
+    "description": "API do Sistema de Supermercado",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8888/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Cadastro de Produtos",
+      "description": "Acesso aos produtos cadastrados"
+    }
+  ],
+  "paths": {
+    "/cadastraproduto/": {
+      "post": {
+        "tags": [
+          "Cadastro de Produtos"
+        ],
+        "description": "Cadastra um novo produto",
+        "operationId": "cadastraproduto",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "preco": {
+                    "type": "string"
+                  },
+                  "codbarra": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "nome": "Banana",
+                  "preco": 10,
+                  "codbarra": 10001
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Retorna uma mensagem de sucesso com ID do produto cadastrado"
+          }
+        }
+      }
+    },
+    "/listaprodutos/": {
+      "get": {
+        "tags": [
+          "Cadastro de Produtos"
+        ],
+        "description": "Lista os Produtos já cadastrados",
+        "operationId": "listaprodutos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Retorna a Lista de produtos Cadastrados"
+          }
+        }
+      }
+    }
+  }
+}

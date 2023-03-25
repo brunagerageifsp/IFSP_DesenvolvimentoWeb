@@ -1,9 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const swaggerUi = require('swagger-ui-express'),
+
+swaggerDocument = require('./swagger.json');
 
 app.use(express.json());
 app.use(cors())
+app.use(
+    '/api-docs',
+    swaggerUi.serve, 
+    swaggerUi.setup(swaggerDocument)
+  );
+
 let id = "0"
 let produtoscadastrados = []
 
@@ -26,5 +35,5 @@ app.get("/listaprodutos", (request, response)=>{
 
 //Inicialização
 app.listen(8888, (request, response) => {
-    console.log("Express Iniciado com Sucesso")
+    console.log("Express e Swagger Iniciados com Sucesso")
 });
