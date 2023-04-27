@@ -14,6 +14,10 @@
     {
       "name": "Cadastro de Produtos",
       "description": "Acesso aos produtos cadastrados"
+    },
+    {
+      "name": "Cadastro de Funcionários",
+      "description": "Acesso aos funcionários cadastrados"
     }
   ],
   "paths": {
@@ -68,6 +72,65 @@
         "responses": {
           "200": {
             "description": "Retorna a Lista de produtos Cadastrados"
+          }
+        }
+      }
+    },
+    "/cadastrafuncionario/": {
+      "post": {
+        "tags": [
+          "Cadastro de Funcionários"
+        ],
+        "description": "Cadastra um novo funcionário",
+        "operationId": "cadastrafuncionario",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "documento": {
+                    "type": "string"
+                  },
+                  "telefone": {
+                    "type": "string"
+                  },
+                  "senha": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "nome": "Antonio",
+                  "documento": "111111111",
+                  "telefone": "01191111111",
+                  "senha": "abc"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Retorna o objeto cadastrado"
+          }
+        }
+      }
+    },
+    "/listafuncionarios/": {
+      "get": {
+        "tags": [
+          "Cadastro de Funcionários"
+        ],
+        "description": "Lista os Funcinários já cadastrados",
+        "operationId": "listafuncionarios",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Retorna a Lista de Funcionários Cadastrados"
           }
         }
       }

@@ -34,7 +34,7 @@
             id="input-senha"
             class="mb-2 mr-sm-2 mb-sm-0"
             placeholder="Digite aqui a senha para acessar o login de Funcionário"
-            v-model="NovoFuncionario.telefone"
+            v-model="NovoFuncionario.senha"
           ></b-form-input>
 
           <br>
@@ -54,11 +54,8 @@
         NovoFuncionario: {
           nome: '',
           documento:  '',
-          salario:  '',
-          endereco:  '',
           telefone:  '',
-          email:  '',
-          dataNascimento:   ''
+          senha:   ''
         }
       }
     },
