@@ -5,6 +5,7 @@
         <b-nav vertical>
             <b-nav-item to="/">Home</b-nav-item>
             <b-nav-item to="/cadastraproduto">Cadastro de Produtos</b-nav-item>
+            <b-nav-item to="/cadastrafuncionario">Cadastro de Funcionarios</b-nav-item>
             <b-nav-item to="/sobre">Sobre o Sistema</b-nav-item>
         </b-nav>
     </b-sidebar>
